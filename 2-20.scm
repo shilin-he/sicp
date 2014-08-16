@@ -1,0 +1,11 @@
+(define (same-parity x . y)
+  (define parity (remainder x 2))
+  (define (iter y result)
+    (if (= (length y) 0)
+      result
+      (let ((c (car y))
+            (d (cdr y)))
+        (if (= (remainder c 2) parity)
+          (iter d (append result (list c)))
+          (iter d result)))))
+  (iter y (list x)))

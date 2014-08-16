@@ -1,0 +1,35 @@
+*** gsi file-name.scm -
+
+1.1
+Tree accumulation
+Combinations
+Special forms
+Procedure definition: (define (<name> <formal parameters>) <body>)
+Substitution model
+normal-order evaluation: fully expand then reduce
+applicative-order evaluation: evaluate the arguments then apply
+Procedural abstraction
+Bound variable, free variable
+Block structure
+Lexical scoping
+1.2
+Defered operations
+Recursive process
+Linear recursive process
+Iterative process
+Linear iterative process
+Tail recursive
+Tree recursive
+1.3
+Higher order procedures: procedures that manipulate procedures
+
+Chapter 2
+Data abstraction
+List-structured
+Message passing
+
+3.2.4
+Every call to a procedure creates a new environment whose
+enclosing environment is where the procedure was defined 
+(procedure environment). A procedure is a pair with some code
+and an environment.

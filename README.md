@@ -1,5 +1,5 @@
 sicp
 ====
 
-My answers for the exercises from the Structure and Interpretation of Computer
-Programs.
+My answers to the exercises in the Structure and Interpretation of Computer
+Programs book.

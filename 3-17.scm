@@ -1,0 +1,28 @@
+(define (append! x y)
+  (set-cdr! (last-pair x) y) 
+  x)
+
+(define (last-pair x)
+  (if (null? (cdr x))
+    x
+    (last-pair (cdr x))))
+
+(define (counted? x pairs)
+  (cond ((null? pairs) #f)
+        ((eq? x (car pairs)) #t)
+        (else (counted? x (cdr pairs)))))
+
+(define (count-pairs x)
+  (define counted-pairs '())
+  (define (append-to-counted-pairs x)
+    (if (null? counted-pairs)
+      (set! counted-pairs (cons x '()))
+      (append! counted-pairs (cons x '()))))
+  (define (iter x)
+    (cond ((not (pair? x)) 0)
+          ((counted? x counted-pairs) 
+           (+ (iter (car x))
+              (iter (cdr x))))
+          (else (begin (append-to-counted-pairs x)
+                       (+ 1 (iter (car x)) (iter (cdr x)))))))
+  (iter x))

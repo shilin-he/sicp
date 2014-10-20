@@ -6,5 +6,7 @@
       (cond ((eq? message 'generate) 
              (begin (set! x (rand-update x)) x))
             ((eq? message 'reset) 
-             (lambda (new-value) (set! x new-value)))
-            (else (error "Unknown symbol -- RAND" message))))))
+             (lambda (new-value) (set! x new-value)))))))
+
+
+
